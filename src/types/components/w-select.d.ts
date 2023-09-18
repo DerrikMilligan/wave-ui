@@ -14,7 +14,9 @@ import {
 import {
   PublicProps,
   ResolveProps
-} from '../extra-vue-types'
+} from '@/types/extra-vue-types'
+
+declare module 'wave-ui/src/wave-ui/components/w-select.vue'
 
 // ----------------------------------------------------------------------------
 // Props
@@ -222,6 +224,7 @@ export interface WaveSelectProps {
    * @see https://antoniandre.github.io/wave-ui/w-select
    */
   fitToContent?: boolean
+
 }
 
 // ----------------------------------------------------------------------------
@@ -283,6 +286,7 @@ export interface WaveSelectEmits {
    * @see https://antoniandre.github.io/wave-ui/w-select
    */
   'onClick:innerIconRight'?: (renameMe1: any) => void
+
 }
 
 // ----------------------------------------------------------------------------
@@ -330,6 +334,7 @@ export interface WaveSelectComputeds extends ComputedOptions {
    * @see https://antoniandre.github.io/wave-ui/w-select
    */
   inputWrapClasses: ComputedGetter<any>
+
 }
 
 // ----------------------------------------------------------------------------
@@ -401,6 +406,7 @@ export interface WaveSelectMethods extends MethodOptions {
    * @see https://antoniandre.github.io/wave-ui/w-select
    */
   closeMenu(): void
+
 }
 
 // ----------------------------------------------------------------------------
@@ -425,19 +431,20 @@ export type WaveSelectSlots = SlotsType<{
    * Provide a custom content for a single select list item: the item at the index `x`.
    * @param {any} item The current item object.
    * @param {any} selected A Boolean representing the selected state of the list item.
-   * @param {any} index The index of the list item.
+   * @param {number} index The index of the list item.
    * @see https://antoniandre.github.io/wave-ui/w-select
    */
-  'item.x': (_: { item: any, selected: any, index: any }) => any
+  'item.x': (_: { item: any, selected: any, index: number }) => any
 
   /**
    * Provide a common custom template for all the select list items.
    * @param {any} item The current item object.
    * @param {any} selected A Boolean representing the selected state of the list item.
-   * @param {any} index The index of the list item.
+   * @param {number} index The index of the list item.
    * @see https://antoniandre.github.io/wave-ui/w-select
    */
-  'item': (_: { item: any, selected: any, index: any }) => any
+  'item': (_: { item: any, selected: any, index: number }) => any
+
 } & {
   /**
    * `x` is an integer starting at `1`.
@@ -468,3 +475,7 @@ export type WSelect = DefineComponent<
   ExtractDefaultPropTypes<WaveSelectProps>,
   WaveSelectSlots
 >
+
+const component: WSelect
+
+export default component
