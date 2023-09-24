@@ -23,6 +23,23 @@ main
     //- #[strong Form elements]: li Added the #[code hide-error] option on all the form elements.
 
     li.patch
+      strong.version v3.6.2
+      ul
+        li
+          strong.code w-tooltip &amp; w-menu
+          ul
+            li Cancel any opening when already closing (if the user goes fast enough and there is a set #[code delay]).
+      ul
+        li
+          strong.code w-select
+          ul
+            li Fix the select list not opening (bug introduced in version 3.6.0). #[issue-link 125]
+        li
+          strong CSS
+          ul
+            li Added the #[code column-reverse] helper class along with all breakpoints definitions (e.g. #[code smd-column-reverse]).
+
+    li.patch
       strong.version v3.6.1
       ul
         li
